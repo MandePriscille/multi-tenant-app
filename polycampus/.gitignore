@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Environnement virtuel
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Django migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# Fichiers de configuration/données sensibles
+*.env
+.env.*
+*.sqlite3
+
+# Fichiers de logs
+*.log
+
+# Fichiers générés par l’éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Coverage et tests
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+.cache/
+
+# Static/media
