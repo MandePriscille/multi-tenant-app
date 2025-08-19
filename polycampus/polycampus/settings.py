@@ -64,6 +64,7 @@ TENANT_DOMAIN_MODEL = "users.Domain"
 DATABASE_ROUTERS = ("django_tenants.routers.TenantSyncRouter",)
 
 MIDDLEWARE = [
+    "django_tenants.middleware.main.TenantMainMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -91,6 +92,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "polycampus.wsgi.application"
+ROOT_URLCONF = "polycampus.urls"
+PUBLIC_SCHEMA_URLCONF = "urls_public"
+PUBLIC_SCHEMA_NAME = "public"
 
 
 # Database
