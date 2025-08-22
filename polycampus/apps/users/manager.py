@@ -1,10 +1,6 @@
 from django.contrib.auth.base_user import BaseUserManager
-from django.db.models.query import QuerySet
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import Group
-from django.shortcuts import redirect, get_list_or_404, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 
 
