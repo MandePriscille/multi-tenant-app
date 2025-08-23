@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-e3&@uti!(^gysga$5+lmmgsbxcxlvntl8217q#eohv@48r6=$8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -94,7 +94,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "polycampus.wsgi.application"
 ROOT_URLCONF = "polycampus.urls"
-PUBLIC_SCHEMA_URLCONF = "urls_public"
+PUBLIC_SCHEMA_URLCONF = "polycampus.urls_public"
 PUBLIC_SCHEMA_NAME = "public"
 
 
