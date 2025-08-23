@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 SHARED_APPS = [
     "django_tenants",
+    "tenant_users.permissions",
     "apps.core",
     "apps.users",
     "django.contrib.admin",
@@ -53,9 +54,9 @@ TENANT_APPS = [
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
 
 
-TENANT_MODEL = "users.Organisation"
+TENANT_MODEL = "core.Organisation"
 TENANT_DOMAIN_MODEL = "users.Domain"
-# AUTH_USER_MODEL = "main_app.PlatformUser"
+AUTH_USER_MODEL = "users.User"
 # AUTHENTICATION_BACKENDS = ("efficiency_evaluation.main_app.backends.UserBackend",)
 # LOGIN_URL = "main_app:login"
 # LOGIN_ATTEMPTS_DAILY_LIMIT = config("LOGIN_ATTEMPTS_DAILY_LIMIT", default=10, cast=int)

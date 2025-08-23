@@ -179,7 +179,7 @@ class Profile(BaseModel):
     profiletype = models.CharField(
         max_length=50, 
         choices=ProfileType.choices, 
-        default=ProfileType.student,
+        default=ProfileType.STUDENT,
         help_text=_('Which type of profile is this profile'),
         verbose_name=_("Profile Type")
     )
@@ -192,7 +192,7 @@ class Profile(BaseModel):
         verbose_name=_("Gender")
     )
         
-    photo = models.ImageField(_("Profile Picture"), upload_to=PathRename('profile-picture'), null=True, blank=True)
+    photo = models.ImageField(_("Profile Picture"), upload_to=('profile-picture'), null=True, blank=True)
     
     documents = models.FileField(_("receipt, student card"), upload_to='verified_documents/', null=True, blank=True)
     

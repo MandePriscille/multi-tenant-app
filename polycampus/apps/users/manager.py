@@ -5,9 +5,6 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 class UserManager(BaseUserManager):
-   
-    # def get_queryset(self) -> QuerySet:
-    #     return super().get_queryset().filter(is_deleted=False)
 
     def create_user(self, email, password, **extra_fields):
         """

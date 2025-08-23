@@ -29,3 +29,13 @@ class ProfileType(models.TextChoices):
     """Enumerate class for Profile Type"""
     STUDENT: Any = " student", _('student')
     TEACHER: Any = " teacher", _('teacher')
+
+
+class ApprovalStatusType(models.TextChoices):
+    """Enumeration class for user approval status."""
+
+    PENDING: Any = "PENDING", _("Pending")
+    APPROVED: Any = "APPROVED", _("Approved")
+    DISAPPROVED: Any = "DISAPPROVED", _("Disapproved")
+    REMOVED: Any = "REMOVED", _("Removed")
+
