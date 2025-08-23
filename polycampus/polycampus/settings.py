@@ -55,7 +55,7 @@ INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in S
 
 
 TENANT_MODEL = "core.Organisation"
-TENANT_DOMAIN_MODEL = "users.Domain"
+TENANT_DOMAIN_MODEL = "core.Domain"
 AUTH_USER_MODEL = "users.User"
 # AUTHENTICATION_BACKENDS = ("efficiency_evaluation.main_app.backends.UserBackend",)
 # LOGIN_URL = "main_app:login"
