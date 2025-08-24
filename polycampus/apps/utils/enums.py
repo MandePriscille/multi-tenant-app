@@ -23,7 +23,14 @@ GROUPS = {
     'admintenant': 'AdminTenant',
     'studentuser': 'StudentUser',
     'teacheruser': 'TeacherUser',
-}       
+}     
+
+class UserGroupName(models.TextChoices):
+    POLYCAMPUS: Any = "polycampus", _("polycampus")
+    TENANT_ADMIN: Any = "Tenant Admin", _("Tenant Admin")
+    TEACHER: Any = "teacher", _("teacher")
+    STUDENT: Any = "student", _("student")
+
 
 class ProfileType(models.TextChoices):
     """Enumerate class for Profile Type"""

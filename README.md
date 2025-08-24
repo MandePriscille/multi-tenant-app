@@ -48,3 +48,16 @@ Gère les utilisateurs et l’authentification sur la plateforme PolyCampus.
 - Gestion des comptes utilisateurs
 - Authentification et autorisations
 
+
+
+
+### Creating a Tenant
+```bash
+python manage.py tenant_creation
+```
+
+ 
+### Creating a User for a Tenant
+```bash
+python manage.py user_creation
+```
