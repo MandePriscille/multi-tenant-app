@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %} {% endblock %} </title>
     <link rel="stylesheet" href="{% static 'css/src/output.css' %}">
+    {% block css %}{% endblock %}
 </head>
 <body>
-    
+    {% include 'public/home/includes/_navbar.html'%}
+
     {% block content %}
     {% endblock %}
 
+    {% include 'public/home/includes/_footer.html'%}
+    {% include 'public/home/includes/_js.html'%}
+
+    {% block js%} {% endblock %}
 </body>
 </html>

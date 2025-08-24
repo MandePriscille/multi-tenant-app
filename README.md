@@ -61,3 +61,11 @@ python manage.py tenant_creation
 ```bash
 python manage.py user_creation
 ```
+
+### taillwind css
+```bash
+npm install
+```
+```bash
+npm run dev
+```

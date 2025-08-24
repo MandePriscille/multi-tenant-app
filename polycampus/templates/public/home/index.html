@@ -1,8 +1,66 @@
 {% extends "public/home/base.html" %}
 {% load static %}
+{% block title %} Home page Polycampus {% endblock %}
+
+{% block css %}
+<style>
+    /* Smooth scrolling for anchor links */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
+    <div class="max-w-screen-xl mx-auto p-4">
+        <!-- About Section -->
+        <section id="about" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">About</h2>
+            <p class="text-gray-700">Learn more about Polycampus, our mission, and our vision for a multitenant educational platform.</p>
+        </section>
 
-<p class="text-3xl font-bold text-primary-300">Welcome to the Public Home Page</p>
+        <!-- Programme Section -->
+        <section id="programme" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Programme</h2>
+            <p class="text-gray-700">Explore the academic programs and courses offered across our campuses.</p>
+        </section>
 
+        <!-- Site Section -->
+        <section id="site" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Site</h2>
+            <p class="text-gray-700">Discover our campuses, facilities, and the unique features of each location.</p>
+        </section>
+
+        <!-- Témoignage Section -->
+        <section id="temoignage" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Témoignage</h2>
+            <p class="text-gray-700">Read testimonials from students, faculty, and partners about their Polycampus experience.</p>
+        </section>
+
+        <!-- Partenaire Section -->
+        <section id="partenaire" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Partenaire</h2>
+            <p class="text-gray-700">Meet our partners who collaborate with us to enhance educational opportunities.</p>
+        </section>
+
+        <!-- Activité Section -->
+        <section id="activite" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Activité</h2>
+            <p class="text-gray-700">Stay updated on events, activities, and extracurricular opportunities at Polycampus.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
+            <p class="text-gray-700">Get in touch with us for inquiries, support, or collaboration opportunities.</p>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="py-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Se connecter</h2>
+            <p class="text-gray-700">Log in to access your Polycampus account and personalized resources.</p>
+            <!-- Placeholder for login form or link -->
+            <a href="/login" class="inline-block py-2 px-4 text-white bg-blue-700 rounded-sm hover:bg-blue-800">Go to Login</a>
+        </section>
+    </div>
 {% endblock %}
