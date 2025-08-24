@@ -1,47 +1,323 @@
 {% load static %}
 
-<nav class="fixed top-0 left-0 right-0 bg-white border-gray-200 z-50 shadow-lg transition-all duration-300">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap text-black">Flowbite</span>
-    </a>
-    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+<nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm transition-all duration-300 hover:shadow-md">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Logo et nom -->
+      <a href="/" class="flex items-center gap-3 group transition-transform duration-200 hover:-translate-y-0.5">
+        <img src="{% static 'images/public/logo_polycampus.png' %}" class="h-12 w-auto" alt="Polycampus Logo" />
+        <span class="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-500 bg-clip-text text-transparent whitespace-nowrap">
+          PolyCampus
+        </span>
+      </a>
+
+      <!-- Menu desktop -->
+      <div class="hidden md:flex items-center gap-8">
+        <nav class="flex items-center gap-6">
+          <a href="#about" class="relative text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 py-2 group">
+            À propos
+            <span class="absolute inset-x-0 -bottom-1 h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center"></span>
+          </a>
+          <a href="#programmes" class="relative text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 py-2 group">
+            Programmes
+            <span class="absolute inset-x-0 -bottom-1 h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center"></span>
+          </a>
+          <a href="#campus" class="relative text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 py-2 group">
+            Campus
+            <span class="absolute inset-x-0 -bottom-1 h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center"></span>
+          </a>
+          <a href="#temoignages" class="relative text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 py-2 group">
+            Témoignages
+            <span class="absolute inset-x-0 -bottom-1 h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center"></span>
+          </a>
+          <a href="#contact" class="relative text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 py-2 group">
+            Contact
+            <span class="absolute inset-x-0 -bottom-1 h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center"></span>
+          </a>
+        </nav>
+
+        <!-- Dropdown langue -->
+        <div class="relative" id="language-dropdown">
+          <button 
+            type="button" 
+            class="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 border border-green-400 hover:border-green-200"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+            </svg>
+            <span class="text-sm font-medium" id="selected-language">FR</span>
+            <svg class="w-4 h-4 transition-transform duration-200" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- Menu dropdown -->
+          <div 
+            class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 opacity-0 invisible transform scale-95 transition-all duration-200 origin-top-right z-50"
+            id="language-menu"
+          >
+            <button 
+              class="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 language-option"
+              data-lang="fr"
+            >
+              <span class="fi fi-fr w-4 h-3 rounded-sm bg-gray-200"></span>
+              Français
+            </button>
+            <button 
+              class="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 language-option"
+              data-lang="en"
+            >
+              <span class="fi fi-gb w-4 h-3 rounded-sm bg-gray-200"></span>
+              English
+            </button>
+            <button 
+              class="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 language-option"
+              data-lang="es"
+            >
+              <span class="fi fi-es w-4 h-3 rounded-sm bg-gray-200"></span>
+              Español
+            </button>
+          </div>
+        </div>
+
+        <!-- Bouton Se connecter -->
+        <a 
+          href="#login" 
+          class="px-4 py-2 text-green-600 border border-green-200 hover:bg-green-50 hover:border-green-300 hover:text-green-700 rounded-lg font-medium transition-all duration-200 text-sm whitespace-nowrap"
+        >
+          Se connecter
+        </a>
+      </div>
+
+      <!-- Bouton menu mobile -->
+      <button 
+        type="button" 
+        class="md:hidden flex items-center justify-center p-2 w-10 h-10 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg border border-gray-200 hover:border-green-200 transition-all duration-200" 
+        aria-controls="mobile-menu" 
+        aria-expanded="false"
+        id="mobile-menu-button"
+      >
+        <span class="sr-only">Ouvrir le menu principal</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-        <li>
-          <a href="#about" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">About</a>
-        </li>
-        <li>
-          <a href="#programme" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">Programme</a>
-        </li>
-        <li>
-          <a href="#site" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">Site</a>
-        </li>
-        <li>
-          <a href="#temoignage" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">Témoignage</a>
-        </li>
-        <li>
-          <a href="#partenaire" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">Partenaire</a>
-        </li>
-        <li>
-          <a href="#activite" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">Activité</a>
-        </li>
-        <li>
-          <a href="#contact" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-200">Contact</a>
-        </li>
-        <li>
-          <a href="#login" class="btn-primary-outline ml-4 px-4 py-2 rounded-md border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-200">Se connecter</a>
-        </li>
-      </ul>
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <div 
+      class="md:hidden opacity-0 invisible max-h-0 overflow-hidden transition-all duration-300 ease-out border-t border-gray-200" 
+      id="mobile-menu"
+    >
+      <div class="py-4 space-y-1">
+        <a href="#about" class="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-200 font-medium">
+          À propos
+        </a>
+        <a href="#programmes" class="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-200 font-medium">
+          Programmes
+        </a>
+        <a href="#campus" class="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-200 font-medium">
+          Campus
+        </a>
+        <a href="#temoignages" class="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-200 font-medium">
+          Témoignages
+        </a>
+        <a href="#contact" class="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-200 font-medium">
+          Contact
+        </a>
+        
+        <!-- Dropdown langue mobile -->
+        <div class="px-4 py-2">
+          <div class="relative" id="mobile-language-dropdown">
+            <button 
+              type="button" 
+              class="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 border border-gray-200"
+            >
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                </svg>
+                <span class="text-sm font-medium" id="mobile-selected-language">Français</span>
+              </div>
+              <svg class="w-4 h-4 transition-transform duration-200" id="mobile-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div 
+              class="mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-1 opacity-0 invisible transform scale-95 transition-all duration-200 origin-top z-50"
+              id="mobile-language-menu"
+            >
+              <button 
+                class="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 mobile-language-option"
+                data-lang="fr"
+              >
+                <span class="fi fi-fr w-4 h-3 rounded-sm bg-gray-200"></span>
+                Français
+              </button>
+              <button 
+                class="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 mobile-language-option"
+                data-lang="en"
+              >
+                <span class="fi fi-gb w-4 h-3 rounded-sm bg-gray-200"></span>
+                English
+              </button>
+              <button 
+                class="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 mobile-language-option"
+                data-lang="es"
+              >
+                <span class="fi fi-es w-4 h-3 rounded-sm bg-gray-200"></span>
+                Español
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4 pt-2">
+          <a 
+            href="#login" 
+            class="block w-full text-center px-4 py-3 text-green-600 border border-green-200 hover:bg-green-50 hover:border-green-300 hover:text-green-700 rounded-lg font-medium transition-all duration-200"
+          >
+            Se connecter
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
-
+<!-- Spacer pour compenser la navbar fixe -->
 <div class="h-20"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Gestion du menu mobile
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+      // Fermer le menu
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.classList.add('opacity-0', 'invisible');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    } else {
+      // Ouvrir le menu
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.classList.remove('opacity-0', 'invisible');
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Fermer le menu mobile au clic sur un lien
+  const mobileLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.classList.add('opacity-0', 'invisible');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Gestion du dropdown de langue desktop
+  const languageDropdown = document.getElementById('language-dropdown');
+  const languageButton = languageDropdown.querySelector('button');
+  const languageMenu = document.getElementById('language-menu');
+  const dropdownArrow = document.getElementById('dropdown-arrow');
+  const selectedLanguage = document.getElementById('selected-language');
+
+  languageButton.addEventListener('click', function() {
+    const isExpanded = languageButton.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+      languageMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      dropdownArrow.classList.remove('rotate-180');
+      languageButton.setAttribute('aria-expanded', 'false');
+    } else {
+      languageMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+      dropdownArrow.classList.add('rotate-180');
+      languageButton.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Gestion des options de langue desktop
+  const languageOptions = document.querySelectorAll('.language-option');
+  languageOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      const langText = this.textContent.trim();
+      
+      selectedLanguage.textContent = lang.toUpperCase();
+      languageMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      dropdownArrow.classList.remove('rotate-180');
+      languageButton.setAttribute('aria-expanded', 'false');
+      
+      // Ici vous pouvez ajouter la logique pour changer la langue
+      console.log('Langue sélectionnée:', lang);
+    });
+  });
+
+  // Gestion du dropdown de langue mobile
+  const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+  const mobileLanguageButton = mobileLanguageDropdown.querySelector('button');
+  const mobileLanguageMenu = document.getElementById('mobile-language-menu');
+  const mobileDropdownArrow = document.getElementById('mobile-dropdown-arrow');
+  const mobileSelectedLanguage = document.getElementById('mobile-selected-language');
+
+  mobileLanguageButton.addEventListener('click', function() {
+    const isExpanded = mobileLanguageButton.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+      mobileLanguageMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      mobileDropdownArrow.classList.remove('rotate-180');
+      mobileLanguageButton.setAttribute('aria-expanded', 'false');
+    } else {
+      mobileLanguageMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+      mobileDropdownArrow.classList.add('rotate-180');
+      mobileLanguageButton.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Gestion des options de langue mobile
+  const mobileLanguageOptions = document.querySelectorAll('.mobile-language-option');
+  mobileLanguageOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      const langText = this.textContent.trim();
+      
+      mobileSelectedLanguage.textContent = langText;
+      selectedLanguage.textContent = lang.toUpperCase();
+      
+      mobileLanguageMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      mobileDropdownArrow.classList.remove('rotate-180');
+      mobileLanguageButton.setAttribute('aria-expanded', 'false');
+      
+      console.log('Langue sélectionnée:', lang);
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    // Dropdown desktop
+    if (!languageDropdown.contains(event.target)) {
+      languageMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      dropdownArrow.classList.remove('rotate-180');
+      languageButton.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Dropdown mobile
+    if (!mobileLanguageDropdown.contains(event.target)) {
+      mobileLanguageMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+      mobileDropdownArrow.classList.remove('rotate-180');
+      mobileLanguageButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+</script>
+
+<!-- Optionnel: Ajouter les drapeaux avec flag-icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css" />

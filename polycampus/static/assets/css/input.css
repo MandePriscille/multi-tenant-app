@@ -431,37 +431,148 @@
 }
 
 @theme {
+  /* === BREAKPOINTS === */
   --breakpoint-xs: 450px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 
+  /* === TYPOGRAPHY === */
   --font-inter: 'Inter', sans-serif;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
-  --color-primary-100: #ffc9ab;
-  --color-primary-200: #ff9256;
-  --color-primary-300: #ff5c02;
-  --color-primary-400: #ec5500;
-  --color-primary-500: #8d3200;
-  --color-primary-600: #712401;
-  --color-primary-10: rgba(255, 92, 2, 0.08);
-  --color-primary-20: rgba(255, 92, 2, 0.2);
-  --color-primary-30: rgba(255, 92, 2, 0.35);
+  /* === COULEURS PRIMAIRES (Vert Éducation) === */
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-300: #86efac;
+  --color-primary-400: #4ade80;
+  --color-primary-500: #22c55e; /* Couleur principale */
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
+  --color-primary-950: #052e16;
 
+  /* === COULEURS SECONDAIRES (Bleu Académique) === */
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9; /* Couleur principale */
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+  --color-secondary-950: #082f49;
 
-  --color-secondary-100: #6fe5ef;
-  --color-secondary-200: #28d9e8;
-  --color-secondary-300: #13a1ad;
-  --color-secondary-400: #0b5e65;
-  --color-secondary-500: #073a3e;
-  --color-secondary-600: #0b5e65;
-  --color-secondary-10: rgba(11, 94, 101, 0.08);
-  --color-secondary-20: rgba(11, 94, 101, 0.2);
-  --color-secondary-30: rgba(11, 94, 101, 0.35);
+  /* === COULEURS NEUTRES === */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
 
-  --container-padding: 12px;
+  /* === COULEURS SÉMANTIQUES === */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+
+  --color-info-50: #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+
+  /* === COULEURS AVEC OPACITÉ === */
+  --color-primary-10: rgba(34, 197, 94, 0.1);
+  --color-primary-20: rgba(34, 197, 94, 0.2);
+  --color-primary-30: rgba(34, 197, 94, 0.3);
+  --color-primary-40: rgba(34, 197, 94, 0.4);
+
+  --color-secondary-10: rgba(14, 165, 233, 0.1);
+  --color-secondary-20: rgba(14, 165, 233, 0.2);
+  --color-secondary-30: rgba(14, 165, 233, 0.3);
+  --color-secondary-40: rgba(14, 165, 233, 0.4);
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* === COULEURS SPÉCIFIQUES POUR MULTITENANT === */
+  --color-tenant-border: var(--color-gray-200);
+  --color-tenant-bg: var(--color-gray-50);
+  --color-campus-card: var(--color-white);
+  --color-campus-hover: var(--color-primary-50);
+
+  /* === ESPACEMENT === */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  --container-padding: 16px;
+  --container-padding-sm: 24px;
+  --container-padding-lg: 32px;
+
+  /* === RADIUS === */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* === OMBRES === */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* === Z-INDEX === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
 }
 
 /* input.css */
