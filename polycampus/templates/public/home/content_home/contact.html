@@ -1,0 +1,117 @@
+{% load static %}
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto gradient-bg">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-pink-100 text-pink-700 text-sm font-medium mb-6">
+                <i class="fas fa-envelope mr-2"></i>
+                Contact
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Restons en <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Contact</span>
+            </h2>
+            
+            <p class="text-xl text-gray-700 mx-auto leading-relaxed">
+                Une question, un projet ou simplement envie d'en savoir plus? 
+                Notre équipe est à votre disposition pour vous accompagner.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Formulaire de contact -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h3>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Votre nom">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Adresse email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="votre@email.com">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
+                        <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option value="">Sélectionnez un sujet</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="partnership">Partenariat</option>
+                            <option value="technical">Support technique</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Votre message..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white py-4 px-6 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Informations de contact -->
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Coordonnées</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Adresse</h4>
+                                <p class="text-gray-700">123 Avenue de l'Education, 75000 Paris</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Téléphone</h4>
+                                <p class="text-gray-700">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-700">contact@polycampus.fr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Réseaux sociaux</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-blue-200 rounded-lg flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 hover:bg-pink-600 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white hover:bg-blue-600">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4">Support technique</h3>
+                    <p class="mb-4">Notre équipe technique est disponible pour vous aider du lundi au vendredi, de 9h à 18h.</p>
+                    <a href="#" class="inline-flex items-center font-semibold">
+                        <i class="fas fa-headset mr-2"></i>
+                        Contacter le support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
