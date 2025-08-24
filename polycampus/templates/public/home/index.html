@@ -13,18 +13,9 @@
 
 {% block content %}
 
-        <!-- Hero Banner -->
-        <section class="hero-banner py-12 md:py-16 text-center rounded-lg" style="background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);">
-            <h1 class="hero-heading text-2xl md:text-3xl font-bold" style="font-family: var(--font-inter); color: var(--color-primary-700); font-weight: var(--font-weight-bold);">
-                Polycampus: Unifying Education Across Campuses
-            </h1>
-            <p class="mt-4 text-lg" style="font-family: var(--font-inter); color: var(--color-gray-700); font-weight: var(--font-weight-normal); max-width: 600px; margin-left: auto; margin-right: auto;">
-                Discover Polycampus, the multitenant SaaS platform that seamlessly connects multiple campuses, streamlining education management and fostering collaboration.
-            </p>
-            <a href="#login" class="inline-block mt-6 py-3 px-6 text-white rounded-md shadow-md hover:shadow-lg transition duration-250" style="background-color: var(--color-primary-500); font-family: var(--font-inter); font-weight: var(--font-weight-semibold); border-radius: var(--radius-md); transition-duration: var(--transition-normal);">
-                Get Started
-            </a>
-        </section>
+<!-- Hero Banner -->
+{% include 'public/home/content_home/banner.html'%}
+        
 
 <section class="bg-white">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 justify-center flex flex-col">
