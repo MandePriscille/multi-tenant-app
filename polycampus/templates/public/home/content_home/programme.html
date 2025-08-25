@@ -1,7 +1,13 @@
 {% load static %}
 
+{% block css %}
+<style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+</style>
+{% endblock %}
+
  <!-- Programme Section -->
-<section id="programme" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<section id="programme" class="py- md:py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center mb-16">
         <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6">
             <i class="fas fa-graduation-cap mr-2"></i>
@@ -17,7 +23,7 @@
             et préparer les étudiants à des carrières d'avenir.
         </p>
     </div>
-
+ 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         <!-- Programme 1 -->
         <div class="program-card border-green-500 rounded-lg p-8 shadow-md card-hover">
